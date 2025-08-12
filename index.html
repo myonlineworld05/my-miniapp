@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farcaster Endless Runner Lite (Fixed)</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ Farcaster Mini App SDK -->
+  <script src="https://unpkg.com/@farcaster/frame-sdk/dist/sdk.umd.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Farcaster Endless Runner Lite</h1>
+    <div class="controls">
+      <button id="btn-login">Farcaster Login (optional)</button>
+      <button id="btn-post" disabled>Post Top Score</button>
+      <button id="btn-share" disabled>Copy Share Text</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="game"></div>
+    <div id="info">
+      <div id="score">Score: 0.0</div>
+      <div id="best">Best: 0.0</div>
+    </div>
+  </main>
+
+  <!-- Game & Integration Scripts -->
+  <script type="module" src="farcaster-integration.js"></script>
+  <script type="module" src="game.js"></script>
+
+  <!-- ✅ Official Ready Call -->
+  <script>
+    window.addEventListener("load", () => {
+      if (window.sdk && sdk.actions && typeof sdk.actions.ready === "function") {
+        sdk.actions.ready();
+        console.log("✅ sdk.actions.ready() called!");
+      } else {
+        console.warn("⚠️ Farcaster Mini App SDK not detected.");
+      }
+    });
+  </script>
+</body>
+</html>
