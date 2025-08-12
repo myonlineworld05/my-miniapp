@@ -1,12 +1,7 @@
 {
   "name": "Endless Runner Lite",
-  "description": "🏃‍♂️ Jump and dodge obstacles in this Farcaster mini game!",
-  "iconUrl": "https://my-miniapp-beryl.vercel.app/icon.png",
-  "websiteUrl": "https://my-miniapp-alpha.vercel.app",
-  "nav": [
-    {
-      "label": "Play Game",
-      "url": "https://my-miniapp-alpha.vercel.app"
-    }
-  ]
+  "description": "Addictive endless runner game for Farcaster",
+  "icon": "https://my-miniapp-alpha.vercel.app/icon.png",
+  "url": "https://my-miniapp-alpha.vercel.app/",
+  "screenshots": ["https://my-miniapp-alpha.vercel.app/screenshot.png"]
 }
