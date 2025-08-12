@@ -1,7 +1,12 @@
 {
   "name": "Endless Runner Lite",
   "description": "Addictive endless runner game for Farcaster",
-  "icon": "https://my-miniapp-alpha.vercel.app/icon.png",
-  "url": "https://my-miniapp-alpha.vercel.app/",
-  "screenshots": ["https://my-miniapp-alpha.vercel.app/screenshot.png"]
+  "iconUrl": "https://my-miniapp-alpha.vercel.app/icon.png",
+  "websiteUrl": "https://my-miniapp-alpha.vercel.app/",
+  "nav": [
+    {
+      "label": "Play",
+      "url": "https://my-miniapp-alpha.vercel.app/"
+    }
+  ]
 }
