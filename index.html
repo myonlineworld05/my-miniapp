@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Farcaster Endless Runner Lite (Fixed)</title>
+  <title>Farcaster Endless Runner Lite</title>
   <link rel="stylesheet" href="style.css" />
 
-  <!-- ✅ Farcaster Mini App SDK -->
+  <!-- ✅ Load Farcaster Mini App SDK -->
   <script src="https://unpkg.com/@farcaster/frame-sdk/dist/sdk.umd.js"></script>
 </head>
 <body>
@@ -27,20 +27,23 @@
     </div>
   </main>
 
-  <!-- Game & Integration Scripts -->
+  <!-- Your game scripts -->
   <script type="module" src="farcaster-integration.js"></script>
   <script type="module" src="game.js"></script>
 
-  <!-- ✅ Official Ready Call -->
+  <!-- ✅ Call ready AFTER SDK is loaded -->
   <script>
-    window.addEventListener("load", () => {
+    function waitForSDK() {
       if (window.sdk && sdk.actions && typeof sdk.actions.ready === "function") {
         sdk.actions.ready();
         console.log("✅ sdk.actions.ready() called!");
       } else {
-        console.warn("⚠️ Farcaster Mini App SDK not detected.");
+        console.log("⏳ Waiting for Farcaster SDK...");
+        setTimeout(waitForSDK, 200); // retry until SDK exists
       }
-    });
+    }
+
+    window.addEventListener("load", waitForSDK);
   </script>
 </body>
 </html>
